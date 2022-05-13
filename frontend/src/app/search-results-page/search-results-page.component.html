@@ -1,0 +1,69 @@
+<div class="container">
+  <p-dropdown [options]="types"
+              [(ngModel)]="selectedType"
+              [optionLabel]="'name'"
+              (onChange)="onFilterChange($event)"
+              [formControl]="control"
+              [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'"
+  ></p-dropdown>
+
+  <div class="mdc-card bottom-card mdc-elevation--z4">
+    <div class="first-half">
+      <div class="mdc-card__primary-action media-image top-card mdc-elevation--z8">
+        <div class="mdc-card__media mdc-card__media--square">
+          <div class="mdc-card__media-content"></div>
+        </div>
+      </div>
+    </div>
+    <div class="last-half">
+      <div class="card-info">
+        <h2>iPhone 11 Pro Max</h2>
+        <h4>$1,499.00</h4>
+        <h6>United States, 16 hours ago</h6>
+      </div>
+    </div>
+  </div>
+
+  <p-card header="" subheader="Card Subheader" [style]="{width: '360px', margin: '20px auto'}"
+          styleClass="p-card-shadow" *ngFor="let item of filteredSpareParts | async">
+    <ng-template pTemplate="header">
+      <img alt="Card" src="assets/images/usercard.png">
+    </ng-template>
+    <div class="brand-block"><img [src]="item.brandIcon" alt="brand icon">
+      <p>{{item.brand}}</p></div>
+    <p>{{item.description}}</p>
+    <p><i class="pi pi-phone"> </i> <span class="show-me-block" *ngIf="!isShownPhoneNumber" (click)="showDialog('top')">показати</span><span
+      *ngIf="isShownPhoneNumber">{{item.sellerContactPhone}}</span></p>
+    <p>
+      <p-tag styleClass="mr-2" [value]="item.statusText" class="tag-background-color"
+             [ngClass]="{'new': status.NEW === item.status, 'repaired': status.REPAIRED === item.status, 'alternative': status.ALTERNATIVE === item.status}"
+             [rounded]="true"></p-tag>
+    </p>
+    <ng-template pTemplate="footer">
+      <button pButton type="button" label="Замовити" icon="pi pi-check"
+              class="p-button-success p-button-rounded p-button-raised"></button>
+    </ng-template>
+  </p-card>
+
+  <p-dialog header="Godfather I" [(visible)]="displayPosition" [position]="position" [modal]="true"
+            [style]="{width: '50vw'}" [baseZIndex]="10000"
+            [draggable]="false" [resizable]="false">
+    <div class="p-grid p-fluid">
+      <div class="p-col-12">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+          <input type="text" pInputText placeholder="Username">
+        </div>
+      </div>
+      <div class="p-col-12">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+          <input type="password" pInputText placeholder="Password">
+        </div>
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="login()" label="Login" class="p-button-text"></p-button>
+    </ng-template>
+  </p-dialog>
+</div>

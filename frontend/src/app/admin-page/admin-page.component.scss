@@ -1,0 +1,30 @@
+.sizes {
+  .p-inputtext {
+    display: block;
+    margin-bottom: .5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.p-field * {
+  display: block;
+}
+
+
+.float-input {
+  margin: 0 0 20px 0;
+}
+
+
+form.admin-form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form.admin-form .p-float-label {
+  margin: 20px 20px 30px 0;
+}

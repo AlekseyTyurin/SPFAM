@@ -1,0 +1,191 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 200px;
+}
+
+p-card.p-card-shadow {
+  margin: 20px auto;
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+}
+
+.p-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+}
+
+.show-me-block{
+  cursor: pointer;
+}
+
+.tag-background-color.new > .p-tag {
+  background: #367C2B;
+}
+
+.tag-background-color.repaired > .p-tag {
+  background: #FFDE00;
+}
+
+.tag-background-color.alternative > .p-tag {
+  background: #FFFFFF;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+p-dropdown {
+  margin: 0 auto;
+}
+
+p-dropdown .p-dropdown {
+  width: 360px;
+}
+
+//367C2C
+//#367C2B
+
+//FDD700
+//#FFDE00
+
+
+//new card
+
+:root {
+  --color-primary: #222;
+  --color-primary-dark: #222;
+  --color-primary-light: #344955;
+  --color-secondary: #f9aa33;
+  --color-tertiary: #bdc4c9;
+  /*
+  --color-primary: #344955;
+  --color-primary-dark: #232F34;
+  --color-primary-light: #4A6572;
+  --color-secondary: #f9aa33;
+  --color-tertiary: #FFFFFF;
+  */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+
+  background-color: #B1E5F2;
+  //overflow: hidden;
+  //height: 100vh;
+}
+
+.animation-reveal {
+  animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bottom-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  height: 180px;
+  border-radius: 16px;
+  background-color: var(--color-primary);
+}
+
+.bottom-card .first-half {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+}
+
+.bottom-card .last-half {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-image {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/54c95d06e4b04d8d26f97dde/1568141487839-1HIQVK42KIQDWQZHHP8W/ke17ZwdGBToddI8pDm48kJZHTN1Q8OARRCRuIsXo7yR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1URQAYlQEqQkUqKOIAYn7Kzzo_fcjiYR6PVGTPu8dmiYkkDCIO_D4RfMcugCbVdMU5g/Apple_iPhone-11-Pro_Most-Powerful-Advanced_091019_big.jpg.large_2x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.top-card {
+  float: left;
+  width: 140px;
+  height: 140px;
+  z-index: 2;
+  margin-left: -100px;
+  background-color: var(--color-secondary);
+  position: relative;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-info {
+  margin: auto;
+  text-align: left;
+  width: 200px;
+  height: 100%;
+  left: -32px;
+  position: relative;
+  padding: 0.8rem;
+}
+
+.card-info > h2 {
+  font-weight: 800;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--color-secondary);
+  height: 32%;
+  line-height: 1.6rem;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 1.6rem;
+}
+
+.card-info > h4 {
+  font-weight: 400;
+  font-size: 13px;
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--color-tertiary);
+  line-height: 2rem;
+  margin: auto;
+}
+
+.card-info > h6 {
+  font-weight: 400;
+  font-size: 11px;
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--color-tertiary);
+  line-height: 2rem;
+  margin: auto;
+}

@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs/index';
-import {map, startWith} from 'rxjs/internal/operators';
+import {map, startWith} from 'rxjs';
 import {SparePartsService} from './services/spare-parts.service';
-
+// import firebase from "firebase/compat";
+// import initializeApp = firebase.initializeApp;
+//
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -35,17 +37,15 @@ export class AppComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
 
-  constructor(private sps: SparePartsService){
+  constructor(private sps: SparePartsService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(' '),
-      map(value => this._filter(value)),
+      map((value: any) => this._filter(value)),
     );
   }
-
-
 
 
   private _filter(filterValue: string): any {
@@ -53,14 +53,14 @@ export class AppComponent implements OnInit {
       filterValue = filterValue.trim();
       filterValue = filterValue.toLowerCase();
 
-      this.sps.getAllSpareParts().subscribe((data) =>  this.options = data)
+      this.sps.getAllSpareParts().subscribe((data) => this.options = data);
     } else {
-      this.options = []
+      this.options = [];
     }
     return this.options.filter((option: any) => option.title.toLowerCase().includes(filterValue));
   }
 
-  routerToDetails(data: any) {
+  routerToDetails(data: string): void {
     this.details = new Array(data);
   }
 }

@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs/index';
-import {map, startWith} from 'rxjs';
-import {SparePartsService} from './services/spare-parts.service';
-// import firebase from "firebase/compat";
-// import initializeApp = firebase.initializeApp;
-//
+import {BehaviorSubject, map, startWith} from 'rxjs';
+import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
+import {SparePartsFacade} from "./data-access-spareparts/application/spare-parts.facade";
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -23,6 +22,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 7, name: 'Neon', availability: 20, symbol: 'Ne'},
 ];
 
+const getObservable = (collection: AngularFirestoreCollection<any>) => {
+  const subject = new BehaviorSubject<any[]>([]);
+  collection.valueChanges({idField: 'id'}).subscribe((val: any[]) => {
+    subject.next(val);
+  });
+  return subject;
+};
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -36,8 +43,7 @@ export class AppComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'availability', 'symbol'];
   dataSource = ELEMENT_DATA;
 
-
-  constructor(private sps: SparePartsService) {
+  constructor(private sps: SparePartsFacade, private store: AngularFirestore) {
   }
 
   ngOnInit(): void {
@@ -45,6 +51,10 @@ export class AppComponent implements OnInit {
       startWith(' '),
       map((value: any) => this._filter(value)),
     );
+
+    // this.spareparts.subscribe(data => console.log(data))
+    // this.inProgress.subscribe(data => console.log(data))
+    // this.done.subscribe(data => console.log(data));
   }
 
 
@@ -53,7 +63,7 @@ export class AppComponent implements OnInit {
       filterValue = filterValue.trim();
       filterValue = filterValue.toLowerCase();
 
-      this.sps.getAllSpareParts().subscribe((data) => this.options = data);
+      this.sps.getAllSpareParts().subscribe((data: any) => this.options = data);
     } else {
       this.options = [];
     }

@@ -1,53 +1,61 @@
-[{
-  "id": 1,
-  "itemCode": "M806418",
-  "itemImgUrl": "assets/images/s-l640.jpg",
-  "brand": "John Deer",
-  "brandIcon": "assets/images/john.png",
-  "status": "new",
-  "statusText": "оригінальні запасні частини",
-  "statusColor": "success",
-  "description": "",
-  "original": "оригінальні запчастини",
-  "originalColor": "success",
-  "sellerName": "AGROSEM LLC",
-  "sellerContactPhone": "044 345 6735"
-},{
-  "id": 2,
-  "itemCode": "",
-  "brand": "John Deer",
-  "status": "repaired",
-  "statusText": "відновлені деталі",
-  "statusColor": "warning",
-  "description": "",
-  "original": "оригінальні",
-  "originalColor": "success",
-  "sellerName": "Agristar LLC",
-  "sellerContactPhone": ""
-},{
-  "id": 3,
-  "itemCode": "",
-  "brand": "John Deer",
-  "status": "alternative",
-  "statusText": "альтернативні деталі",
-  "statusColor": "warning",
-  "description": "",
-  "original": "OEM",
-  "originalColor": "warning",
-  "sellerName": "LLC «AGROTEK-INVEST»",
-  "sellerContactPhone": ""
-},{
-  "id": 4,
-  "itemCode": "",
-  "brand": "John Deer",
-  "status": "new",
-  "statusText": "оригінальні запчастини",
-  "statusColor": "success",
-  "description": "",
-  "original": "OEM",
-  "originalColor": "warning",
-  "sellerName": "LLC JUPITER 9 Agroservis",
-  "sellerContactPhone": ""
-}
-
+[
+  {
+    "id": 1,
+    "itemCode": "M806418",
+    "itemImgUrl": "assets/images/filter.png",
+    "brand": "John Deer",
+    "brandIcon": "assets/images/john-deere-logo-black-small.png",
+    "tooltipText": "<b style='font-size: 16px'>Genuine Parts</b> <br><br><span style='font-size: 12px'> Genuine John Deere Parts are your best choice for your newer machines.</span>",
+    "status": "new",
+    "statusText": "оригінальні запасні частини",
+    "statusColor": "success",
+    "description": "Oil Filter - OIL FILTER, USC-A TYPE OIL FILTER D",
+    "sellerName": "AGROSEM LLC",
+    "sellerContactPhone": "044 345 6735"
+  },
+  {
+    "id": 2,
+    "itemCode": "F058325",
+    "brand": "John Deer",
+    "brandIcon": "assets/images/john-deere-reman-logo-small.png",
+    "tooltipText": "<b style='font-size: 16px'>Remanufactured Parts</b> <br><br><span style='font-size: 12px'>John Deere Remanufactured (REMAN) parts cut costs not quality with our remanufactured solutions.</span>",
+    "status": "repaired",
+    "statusText": "відновлені деталі",
+    "statusColor": "warning",
+    "description": "Герметичний акумулятор відкритого типу",
+    "original": "оригінальні",
+    "originalColor": "success",
+    "sellerName": "Agristar LLC",
+    "sellerContactPhone": "0 800 210 242"
+  },
+  {
+    "id": 3,
+    "itemCode": "",
+    "brand": "John Deer",
+    "brandIcon": "assets/images/ai-sunbelt-logo.png",
+    "tooltipText": "<b style='font-size: 16px'>Alternative Parts</b> <br><br><span style='font-size: 12px'>Alternative parts are economical aftermarket parts for older John Deere machines. They are redesigned at a different specification level and authorised to fit John Deere machines.</span>",
+    "status": "alternative",
+    "statusText": "альтернативні деталі",
+    "statusColor": "warning",
+    "description": "",
+    "original": "OEM",
+    "originalColor": "warning",
+    "sellerName": "LLC «AGROTEK-INVEST»",
+    "sellerContactPhone": ""
+  },
+  {
+    "id": 4,
+    "itemCode": "",
+    "brand": "John Deer",
+    "brandIcon": "assets/images/john-deere-logo-black-small.png",
+    "tooltipText": "<b style='font-size: 16px'>Genuine Parts</b> <br><br><span style='font-size: 12px'> Genuine John Deere Parts are your best choice for your newer machines.</span>",
+    "status": "new",
+    "statusText": "оригінальні запчастини",
+    "statusColor": "success",
+    "description": "",
+    "original": "OEM",
+    "originalColor": "warning",
+    "sellerName": "LLC JUPITER 9 Agroservis",
+    "sellerContactPhone": ""
+  }
 ]

@@ -1,3 +1,3 @@
-import * as SparePartsActions from './spareparts.actions';
+import * as SparePartsActions from './spare-parts.actions';
 
 export  {SparePartsActions};

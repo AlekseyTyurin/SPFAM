@@ -8,7 +8,6 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import {SparePartsService} from './services/spare-parts.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -29,26 +28,20 @@ import {BadgeModule} from "primeng/badge";
 import {TagModule} from "primeng/tag";
 import {DropdownModule} from "primeng/dropdown";
 import {DialogModule} from "primeng/dialog";
-// import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
-// import {AngularFireModule} from "@angular/fire/compat";
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCgc0XnknWcxqxlVrh0LvrEpHUBCS8mM7s",
-//   authDomain: "agriculture-spare-parts.firebaseapp.com",
-//   databaseURL: "https://agriculture-spare-parts-default-rtdb.europe-west1.firebasedatabase.app",
-//   projectId: "agriculture-spare-parts",
-//   storageBucket: "agriculture-spare-parts.appspot.com",
-//   messagingSenderId: "780408971488",
-//   appId: "1:780408971488:web:8115c97f80d69178523085",
-//   measurementId: "G-8C7QHFYDW3"
-// };
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {TooltipModule} from "primeng/tooltip";
+import {SparePartsFacade} from "./data-access-spareparts/application/spare-parts.facade";
+import {PasswordModule} from "primeng/password";
+import {LoginPageComponent} from "./admin-feature/login-page/login-page.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminPageComponent,
     SparePartsPageComponent,
-    SearchResultsPageComponent
+    SearchResultsPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -76,11 +69,13 @@ import {DialogModule} from "primeng/dialog";
     TagModule,
     DropdownModule,
     DialogModule,
+    PasswordModule,
 
-    // AngularFireModule.initializeApp(firebaseConfig),
-    // AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    TooltipModule,
   ],
-  providers: [SparePartsService],
+  providers: [SparePartsFacade],
   bootstrap: [AppComponent]
 })
 export class AppModule {

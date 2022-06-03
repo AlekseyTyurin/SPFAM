@@ -1,49 +1,81 @@
 <div class="container">
-  <p-dropdown [options]="types"
-              [(ngModel)]="selectedType"
-              [optionLabel]="'name'"
-              (onChange)="onFilterChange($event)"
-              [formControl]="control"
-              [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'"
-  ></p-dropdown>
+  <!--  <p-dropdown [options]="types"-->
+  <!--              [(ngModel)]="selectedType"-->
+  <!--              [optionLabel]="'name'"-->
+  <!--              (onChange)="onFilterChange($event)"-->
+  <!--              [formControl]="control"-->
+  <!--              [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'"-->
+  <!--  ></p-dropdown>-->
 
-  <div class="mdc-card bottom-card mdc-elevation--z4">
-    <div class="first-half">
-      <div class="mdc-card__primary-action media-image top-card mdc-elevation--z8">
-        <div class="mdc-card__media mdc-card__media--square">
-          <div class="mdc-card__media-content"></div>
-        </div>
-      </div>
-    </div>
-    <div class="last-half">
-      <div class="card-info">
-        <h2>iPhone 11 Pro Max</h2>
-        <h4>$1,499.00</h4>
-        <h6>United States, 16 hours ago</h6>
-      </div>
+<!--  <span class="p-input-icon-left">-->
+<!--    <i class="pi pi-search"></i>-->
+<!--    <input type="text" pInputText placeholder="Search" [(ngModel)]="searchValue"/>-->
+<!--  </span>-->
+
+
+  <div class="p-col-12 p-md-4">
+    <div class="p-inputgroup">
+      <input type="text" pInputText placeholder="Search" [(ngModel)]="searchValue">
+      <button type="button" pButton pRipple label="Search" (click)="searchItems($event)"></button>
     </div>
   </div>
 
-  <p-card header="" subheader="Card Subheader" [style]="{width: '360px', margin: '20px auto'}"
-          styleClass="p-card-shadow" *ngFor="let item of filteredSpareParts | async">
-    <ng-template pTemplate="header">
-      <img alt="Card" src="assets/images/usercard.png">
-    </ng-template>
-    <div class="brand-block"><img [src]="item.brandIcon" alt="brand icon">
-      <p>{{item.brand}}</p></div>
-    <p>{{item.description}}</p>
-    <p><i class="pi pi-phone"> </i> <span class="show-me-block" *ngIf="!isShownPhoneNumber" (click)="showDialog('top')">показати</span><span
-      *ngIf="isShownPhoneNumber">{{item.sellerContactPhone}}</span></p>
-    <p>
-      <p-tag styleClass="mr-2" [value]="item.statusText" class="tag-background-color"
-             [ngClass]="{'new': status.NEW === item.status, 'repaired': status.REPAIRED === item.status, 'alternative': status.ALTERNATIVE === item.status}"
-             [rounded]="true"></p-tag>
-    </p>
-    <ng-template pTemplate="footer">
-      <button pButton type="button" label="Замовити" icon="pi pi-check"
-              class="p-button-success p-button-rounded p-button-raised"></button>
-    </ng-template>
-  </p-card>
+  <!--  <div class="mdc-card bottom-card mdc-elevation&#45;&#45;z4">-->
+  <!--    <div class="first-half">-->
+  <!--      <div class="mdc-card__primary-action media-image top-card mdc-elevation&#45;&#45;z8">-->
+  <!--        <div class="mdc-card__media mdc-card__media&#45;&#45;square">-->
+  <!--          <div class="mdc-card__media-content">-->
+  <!--            <img src="assets/images/accumulator.png" alt="">-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--    <div class="last-half">-->
+  <!--      <div class="card-info">-->
+  <!--        <h2>F058325</h2>-->
+  <!--        <h4>Герметичний акумулятор-->
+  <!--          відкритого типу</h4>-->
+  <!--        <h6>United States, 16 hours ago</h6>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <!--  <p-card header="" subheader="" [style]="{width: '360px', margin: '20px auto'}"-->
+  <!--          styleClass="p-card-shadow" *ngFor="let item of spareParts$ | async">-->
+  <!--    <ng-template pTemplate="header">-->
+  <!--      <img [src]="item.itemImgUrl" class="item-img" alt="item image">-->
+  <!--      &lt;!&ndash;      <div class="brand-block">&ndash;&gt;-->
+  <!--      <img [src]="item.brandIcon" class="brand-icon" alt="brand icon">-->
+  <!--      &lt;!&ndash;        <i class="pi pi-info-circle" pTooltip="{{item.tooltipText}}" tooltipPosition="top" [escape]="false"></i>&ndash;&gt;-->
+  <!--      &lt;!&ndash;      </div>&ndash;&gt;-->
+  <!--    </ng-template>-->
+
+
+  <!--    <div class="spare-part-block">-->
+  <!--      <p>Part Number  <span>{{item.itemCode}}</span></p>-->
+  <!--      <p>Qty Req <span>1</span></p>-->
+  <!--      <p>Description {{item.description}}</p>-->
+  <!--    </div>-->
+  <!--    <div class="seller-block">-->
+  <!--      <p class="seller-name">{{item.sellerName}}</p>-->
+  <!--      <p class="phone-block"><i class="pi pi-phone"> </i>-->
+  <!--        <span class="show-me-block"-->
+  <!--              *ngIf="!isShownPhoneNumber"-->
+  <!--              (click)="showDialog('top')">показати</span>-->
+  <!--        <span class="show-me-block"-->
+  <!--              *ngIf="isShownPhoneNumber">{{item.sellerContactPhone}}</span></p>-->
+  <!--    </div>-->
+  <!--    <p>-->
+
+  <!--      <p-tag styleClass="mr-2" [value]="item.statusText" class="tag-background-color"-->
+  <!--             [ngClass]="{'new': status.NEW === item.status, 'repaired': status.REPAIRED === item.status, 'alternative': status.ALTERNATIVE === item.status}"-->
+  <!--             [rounded]="true"></p-tag>-->
+  <!--    </p>-->
+  <!--    <ng-template pTemplate="footer">-->
+  <!--      <button pButton type="button" label="Замовити" icon="pi pi-check"-->
+  <!--              class="p-button-success p-button-rounded p-button-raised"></button>-->
+  <!--    </ng-template>-->
+  <!--  </p-card>-->
 
   <p-dialog header="Godfather I" [(visible)]="displayPosition" [position]="position" [modal]="true"
             [style]="{width: '50vw'}" [baseZIndex]="10000"

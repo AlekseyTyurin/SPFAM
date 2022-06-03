@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="card">
+    <div class="p-field">
+      <label for="username">Username</label>
+      <input id="username" type="text" pInputText [(ngModel)]="username"/>
+    </div>
+    <div class="p-field">
+      <label for="email">Password</label>
+      <p-password id="email" [(ngModel)]="password" [toggleMask]="true" [feedback]="false"></p-password>
+    </div>
+    <button pButton pRipple type="submit" label="login" class="p-button-success login-button"></button>
+  </div>
+</div>

@@ -4,15 +4,60 @@
   align-items: center;
   justify-content: center;
   padding: 0 200px;
+
+  .seller-block {
+    display: flex;
+    justify-content: space-between;
+
+    .seller-name {
+      font-weight: bold;
+    }
+  }
 }
 
 p-card.p-card-shadow {
   margin: 20px auto;
 }
 
-.brand-block {
+.p-card-header {
   display: flex;
   align-items: center;
+
+  //h1 {
+  //  margin: 0;
+  //  padding-top: 10px;
+  //}
+
+  img {
+    &.item-img {
+      width: 20% !important;
+      margin: 5px 35px 0 35px;
+    }
+
+    &.brand-icon {
+      width: 50%;
+    }
+
+  }
+}
+
+//
+//.brand-block {
+//  display: flex;
+//
+//}
+//
+//.brand-block > img {
+//  width: 175px;
+//  margin-right: 10px;
+//}
+
+.spare-part-block {
+  padding: 0 10px;
+
+  span:nth-child(1) {
+    float: right;
+  }
 }
 
 .p-grid {
@@ -26,9 +71,18 @@ p-card.p-card-shadow {
   margin-top: -0.5rem;
 }
 
-.show-me-block{
-  cursor: pointer;
+.phone-block {
+  display: flex;
+  align-items: center;
+  width: 150px;
+
+  .show-me-block {
+    display: block;
+    cursor: pointer;
+    margin-left: 15px;
+  }
 }
+
 
 .tag-background-color.new > .p-tag {
   background: #367C2B;
@@ -129,12 +183,12 @@ body {
   justify-content: center;
 }
 
-.media-image {
-  background-image: url("https://images.squarespace-cdn.com/content/v1/54c95d06e4b04d8d26f97dde/1568141487839-1HIQVK42KIQDWQZHHP8W/ke17ZwdGBToddI8pDm48kJZHTN1Q8OARRCRuIsXo7yR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1URQAYlQEqQkUqKOIAYn7Kzzo_fcjiYR6PVGTPu8dmiYkkDCIO_D4RfMcugCbVdMU5g/Apple_iPhone-11-Pro_Most-Powerful-Advanced_091019_big.jpg.large_2x.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
+//.media-image {
+//  background-image: url("https://images.squarespace-cdn.com/content/v1/54c95d06e4b04d8d26f97dde/1568141487839-1HIQVK42KIQDWQZHHP8W/ke17ZwdGBToddI8pDm48kJZHTN1Q8OARRCRuIsXo7yR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1URQAYlQEqQkUqKOIAYn7Kzzo_fcjiYR6PVGTPu8dmiYkkDCIO_D4RfMcugCbVdMU5g/Apple_iPhone-11-Pro_Most-Powerful-Advanced_091019_big.jpg.large_2x.jpg");
+//  background-repeat: no-repeat;
+//  background-position: center;
+//  background-size: cover;
+//}
 
 .top-card {
   float: left;
@@ -160,6 +214,12 @@ body {
   padding: 0.8rem;
 }
 
+.mdc-card__media-content {
+  img {
+    height: 65px;
+  }
+}
+
 .card-info > h2 {
   font-weight: 800;
   font-size: 15px;
@@ -177,7 +237,7 @@ body {
   font-size: 13px;
   font-family: "Lexend Deca", sans-serif;
   color: var(--color-tertiary);
-  line-height: 2rem;
+  //line-height: 2rem;
   margin: auto;
 }
 

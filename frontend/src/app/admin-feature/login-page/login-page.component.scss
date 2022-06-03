@@ -1,0 +1,59 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative;
+
+  &::after {
+    content: "";
+    background-image: linear-gradient(#F8F8F8, #F8F8F8), url("../../../assets/images/pngwing.com.png");
+    background-size: 50%;
+    background-repeat: repeat;
+    background-blend-mode: saturation;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .card {
+    height: 310px;
+    width: 500px;
+    margin: 0 auto;
+    background: #F8F8F8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 5px 10px #696969;
+
+    .p-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 7px;
+
+      label {
+        margin-bottom: 10px;
+      }
+
+    }
+    ::ng-deep.p-inputtext,
+    .login-button{
+      width: 400px;
+    }
+
+    .login-button{
+      margin-top: 20px;
+    }
+  }
+}
+
+
